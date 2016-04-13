@@ -1,17 +1,17 @@
 # New closure rules, didn't quite work yet (at 0.0.1)
 #
-# git_repository(
-#     name = "io_bazel_rules_closure",
-#     remote = "https://github.com/bazelbuild/rules_closure.git",
-#     tag = "0.0.1",
-# )
-#
-# load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
-# closure_repositories()
+git_repository(
+    name = "io_bazel_rules_closure",
+    remote = "https://github.com/bazelbuild/rules_closure.git",
+    tag = "0.0.1",
+)
 
-load("@bazel_tools//tools/build_rules/closure:closure_repositories.bzl", "closure_repositories")
-
+load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
 closure_repositories()
+
+# load("@bazel_tools//tools/build_rules/closure:closure_repositories.bzl", "closure_repositories")
+
+# closure_repositories()
 
 # The following dependencies were calculated from:
 # io.undertow:undertow-core:1.2.11.Final
