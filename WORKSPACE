@@ -13,6 +13,15 @@ closure_repositories()
 
 # closure_repositories()
 
+
+# The following dependencies were calculated from:
+# com.google.guava:guava:19.0
+
+maven_jar(
+    name = "com_google_guava_guava",
+    artifact = "com.google.guava:guava:19.0",
+)
+
 # The following dependencies were calculated from:
 # io.undertow:undertow-core:1.2.11.Final
 # io.undertow:undertow-servlet:1.2.11.Final

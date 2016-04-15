@@ -46,8 +46,7 @@ closure_css_binary(
 
 closure_css_library(
     name = "coffeerun_css",
-    srcs = ["coffeerun.gss"],
-    deps = ["@closure_library//:closure_library_css"],
+    srcs = ["styles/coffeerun.gss"],
 )
 
 closure_template_js_library(
@@ -60,8 +59,11 @@ closure_template_js_library(
 
 closure_template_java_library(
     name = "coffeerun_soy_java",
-    srcs = ["index.soy"], 
+    srcs = ["templates/index.soy"], 
     java_package = "com.robfig",
+    deps = [
+        ":com_google_guava_guava",
+    ],
 )
 
 ##### 
@@ -102,6 +104,18 @@ closure_template_java_library(
 #     srcs = glob(["templates/*.soy"]),
 # )
 
+####
+# The following dependencies were calculated from:
+# com.google.guava:guava:19.0
+
+
+java_library(
+    name = "com_google_guava_guava",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_guava_guava//jar",
+    ],
+)
 
 #####
 # The below lines were generated from the generate_workspace tool:
