@@ -52,9 +52,9 @@ closure_css_library(
 
 closure_template_js_library(
     name = "coffeerun_soy",
-    srcs = ["index.soy"],
+    srcs = ["templates/index.soy"],
      deps = [
-        "@io_bazel_rules_closure//closure/templates",
+        "@io_bazel_rules_closure//closure/library",
     ],
 )
 
