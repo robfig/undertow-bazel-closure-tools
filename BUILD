@@ -33,8 +33,8 @@ closure_js_library(
 #    language = "ECMASCRIPT6_TYPED",
 #    depmode = "ES6MODULES",
     deps = [
-        "@closure_library//:closure_library",
-        "@closure_templates//:closure_templates_js",
+#        "@closure_library//:closure_library",
+#        "@closure_templates//:closure_templates_js",
         ":coffeerun_soy",
     ]
 )
