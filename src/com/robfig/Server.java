@@ -1,5 +1,10 @@
 package com.robfig;
 
+import com.google.common.io.Resources;
+
+import com.google.template.soy.*;
+import com.google.template.soy.tofu.*;
+
 import io.undertow.*;
 import io.undertow.server.*;
 import io.undertow.util.*;
@@ -11,13 +16,19 @@ import io.undertow.util.*;
  */
 public class Server {
     public static void main(final String[] args) {
+        SoyTofu tofu = new SoyFileSet.Builder()
+            .add(Resources.getResource("templates/index.soy"))
+            .build()
+            .compileToTofu();
         Undertow server = Undertow.builder()
                 .addHttpListener(8080, "localhost")
                 .setHandler(new HttpHandler() {
                     @Override
                     public void handleRequest(final HttpServerExchange exchange) throws Exception {
-                        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-                        exchange.getResponseSender().send("Hello World");
+                        String html = tofu.newRenderer("coffeerun.main")
+                            .render();
+                        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/html");
+                        exchange.getResponseSender().send(html);
                     }
                 }).build();
         server.start();

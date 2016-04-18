@@ -16,6 +16,126 @@ maven_jar(
 )
 
 # The following dependencies were calculated from:
+# com.google.template:soy:2016-01-12
+
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "com_google_code_findbugs_jsr305",
+    artifact = "com.google.code.findbugs:jsr305:2.0.3",
+    sha1 = "5871fb60dc68d67da54a663c3fd636a10a532948",
+)
+
+# com.google.inject:guice:jar:3.0
+maven_jar(
+    name = "aopalliance_aopalliance",
+    artifact = "aopalliance:aopalliance:1.0",
+    sha1 = "0235ba8b489512805ac13a8f9ea77a1ca5ebe3e8",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "org_ow2_asm_asm_util",
+    artifact = "org.ow2.asm:asm-util:5.0.3",
+    sha1 = "1512e5571325854b05fb1efce1db75fcced54389",
+)
+
+# com.google.inject:guice:jar:3.0
+maven_jar(
+    name = "org_sonatype_sisu_inject_cglib",
+    artifact = "org.sonatype.sisu.inject:cglib:2.2.1-v20090111",
+    sha1 = "07ce5e983fd0e6c78346f4c9cbfa39d83049dda2",
+)
+
+maven_jar(
+    name = "com_google_template_soy",
+    artifact = "com.google.template:soy:2016-01-12",
+)
+
+# com.google.template:soy:jar:2016-01-12
+# com.google.inject:guice:jar:3.0
+maven_jar(
+    name = "javax_inject_javax_inject",
+    artifact = "javax.inject:javax.inject:1",
+    sha1 = "6975da39a7040257bd51d21a231b76c915872d38",
+)
+
+# com.google.template:soy:jar:2016-01-12
+# org.ow2.asm:asm-tree:jar:5.0.3
+maven_jar(
+    name = "org_ow2_asm_asm",
+    artifact = "org.ow2.asm:asm:5.0.3",
+    sha1 = "dcc2193db20e19e1feca8b1240dbbc4e190824fa",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "args4j_args4j",
+    artifact = "args4j:args4j:2.0.23",
+    sha1 = "422e5b898b573b4537fbf5564f58829c0382b029",
+)
+
+# org.ow2.asm:asm-analysis:jar:5.0.3
+# org.ow2.asm:asm-commons:jar:5.0.3
+# org.ow2.asm:asm-util:jar:5.0.3
+maven_jar(
+    name = "org_ow2_asm_asm_tree",
+    artifact = "org.ow2.asm:asm-tree:5.0.3",
+    sha1 = "287749b48ba7162fb67c93a026d690b29f410bed",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "org_ow2_asm_asm_commons",
+    artifact = "org.ow2.asm:asm-commons:5.0.3",
+    sha1 = "a7111830132c7f87d08fe48cb0ca07630f8cb91c",
+)
+
+# org.sonatype.sisu.inject:cglib:jar:2.2.1-v20090111
+maven_jar(
+    name = "asm_asm",
+    artifact = "asm:asm:3.1",
+    sha1 = "c157def142714c544bdea2e6144645702adf7097",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "org_ow2_asm_asm_analysis",
+    artifact = "org.ow2.asm:asm-analysis:5.0.3",
+    sha1 = "c7126aded0e8e13fed5f913559a0dd7b770a10f3",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "com_google_inject_extensions_guice_assistedinject",
+    artifact = "com.google.inject.extensions:guice-assistedinject:3.0",
+    sha1 = "544449ddb19f088dcde44f055d30a08835a954a7",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "com_google_inject_extensions_guice_multibindings",
+    artifact = "com.google.inject.extensions:guice-multibindings:3.0",
+    sha1 = "5e670615a927571234df68a8b1fe1a16272be555",
+)
+
+# com.google.template:soy:jar:2016-01-12
+# com.google.inject.extensions:guice-assistedinject:jar:3.0
+# com.google.inject.extensions:guice-multibindings:jar:3.0
+maven_jar(
+    name = "com_google_inject_guice",
+    artifact = "com.google.inject:guice:3.0",
+    sha1 = "9d84f15fe35e2c716a02979fb62f50a29f38aefa",
+)
+
+# com.google.template:soy:jar:2016-01-12
+maven_jar(
+    name = "com_ibm_icu_icu4j",
+    artifact = "com.ibm.icu:icu4j:51.1",
+    sha1 = "8ce396c4aed83c0c3de9158dc72c834fd283d5a4",
+)
+
+# The following dependencies were calculated from:
 # io.undertow:undertow-core:1.2.11.Final
 # io.undertow:undertow-servlet:1.2.11.Final
 # io.undertow:undertow-websockets-jsr:1.2.11.Final

@@ -2,6 +2,8 @@ java_binary(
     name = "server",
     srcs = glob(["src/**/*.java"]),
     deps = [
+        ":com_google_guava_guava",
+        ":com_google_template_soy",
         ":io_undertow_undertow_websockets_jsr",
         ":io_undertow_undertow_core",
         ":io_undertow_undertow_servlet",
@@ -9,6 +11,7 @@ java_binary(
     resources = [
         ":coffeerun_bin",
         ":coffeerun_css_bin",
+        "templates/index.soy",
     ],
     main_class = "com.robfig.Server",
 )
@@ -68,16 +71,173 @@ closure_template_java_library(
     ],
 )
 
-####
 # The following dependencies were calculated from:
 # com.google.guava:guava:19.0
-
 
 java_library(
     name = "com_google_guava_guava",
     visibility = ["//visibility:public"],
     exports = [
         "@com_google_guava_guava//jar",
+    ],
+)
+
+# The following dependencies were calculated from:
+# com.google.template:soy:2016-01-12
+
+java_library(
+    name = "com_google_code_findbugs_jsr305",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_code_findbugs_jsr305//jar",
+    ],
+)
+
+java_library(
+    name = "aopalliance_aopalliance",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@aopalliance_aopalliance//jar",
+    ],
+)
+
+java_library(
+    name = "org_ow2_asm_asm_util",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_ow2_asm_asm_util//jar",
+        "@org_ow2_asm_asm_tree//jar",
+    ],
+)
+
+java_library(
+    name = "org_sonatype_sisu_inject_cglib",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_sonatype_sisu_inject_cglib//jar",
+        "@asm_asm//jar",
+    ],
+)
+
+java_library(
+    name = "com_google_template_soy",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_template_soy//jar",
+        "@aopalliance_aopalliance//jar",
+        "@args4j_args4j//jar",
+        "@asm_asm//jar",
+        "@com_google_code_findbugs_jsr305//jar",
+        "@com_google_guava_guava//jar",
+        "@com_google_inject_extensions_guice_assistedinject//jar",
+        "@com_google_inject_extensions_guice_multibindings//jar",
+        "@com_google_inject_guice//jar",
+        "@com_ibm_icu_icu4j//jar",
+        "@javax_inject_javax_inject//jar",
+        "@org_ow2_asm_asm//jar",
+        "@org_ow2_asm_asm_analysis//jar",
+        "@org_ow2_asm_asm_commons//jar",
+        "@org_ow2_asm_asm_tree//jar",
+        "@org_ow2_asm_asm_util//jar",
+        "@org_sonatype_sisu_inject_cglib//jar",
+    ],
+)
+
+java_library(
+    name = "javax_inject_javax_inject",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@javax_inject_javax_inject//jar",
+    ],
+)
+
+java_library(
+    name = "org_ow2_asm_asm",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_ow2_asm_asm//jar",
+    ],
+)
+
+java_library(
+    name = "args4j_args4j",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@args4j_args4j//jar",
+    ],
+)
+
+java_library(
+    name = "org_ow2_asm_asm_tree",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_ow2_asm_asm_tree//jar",
+        "@org_ow2_asm_asm//jar",
+    ],
+)
+
+java_library(
+    name = "org_ow2_asm_asm_commons",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_ow2_asm_asm_commons//jar",
+        "@org_ow2_asm_asm//jar",
+        "@org_ow2_asm_asm_tree//jar",
+    ],
+)
+
+java_library(
+    name = "asm_asm",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@asm_asm//jar",
+    ],
+)
+
+java_library(
+    name = "org_ow2_asm_asm_analysis",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@org_ow2_asm_asm_analysis//jar",
+        "@org_ow2_asm_asm_tree//jar",
+    ],
+)
+
+java_library(
+    name = "com_google_inject_extensions_guice_assistedinject",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_inject_extensions_guice_assistedinject//jar",
+        "@com_google_inject_guice//jar",
+    ],
+)
+
+java_library(
+    name = "com_google_inject_extensions_guice_multibindings",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_inject_extensions_guice_multibindings//jar",
+        "@com_google_inject_guice//jar",
+    ],
+)
+
+java_library(
+    name = "com_google_inject_guice",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_google_inject_guice//jar",
+        "@aopalliance_aopalliance//jar",
+        "@asm_asm//jar",
+        "@javax_inject_javax_inject//jar",
+        "@org_sonatype_sisu_inject_cglib//jar",
+    ],
+)
+
+java_library(
+    name = "com_ibm_icu_icu4j",
+    visibility = ["//visibility:public"],
+    exports = [
+        "@com_ibm_icu_icu4j//jar",
     ],
 )
 
