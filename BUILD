@@ -31,10 +31,7 @@ closure_js_library(
     name = "coffeerun_lib",
     srcs = glob(["scripts/*.js"]),
 #    language = "ECMASCRIPT6_TYPED",
-#    depmode = "ES6MODULES",
     deps = [
-#        "@closure_library//:closure_library",
-#        "@closure_templates//:closure_templates_js",
         ":coffeerun_soy",
     ]
 )
@@ -65,44 +62,6 @@ closure_template_java_library(
         ":com_google_guava_guava",
     ],
 )
-
-##### 
-# From https://github.com/bazelbuild/bazel/tree/master/tools/build_rules/closure
-
-# load("@bazel_tools//tools/build_rules/closure:closure_js_binary.bzl", "closure_js_binary")
-# load("@bazel_tools//tools/build_rules/closure:closure_js_library.bzl", "closure_js_library")
-# load("@bazel_tools//tools/build_rules/closure:closure_stylesheet_library.bzl", "closure_stylesheet_library")
-# load("@bazel_tools//tools/build_rules/closure:closure_template_library.bzl", "closure_template_library")
-
-# closure_js_binary(
-#     name = "coffeerun_js",
-#     language_in = "es6_typed",
-# #    externs = ["externs/jquery-1.9.js"],
-#     main = "app.main",
-#     deps = [":coffeerun_lib"],
-# )
-
-# closure_js_library(
-#     name = "coffeerun_lib",
-#     srcs = glob(["scripts/*.js"]),
-#     deps = [
-#         "@closure_library//:closure_library",
-#         "@closure_templates//:closure_templates_js",
-#         ":coffeerun_css",
-#         ":coffeerun_soy",
-#     ]
-# )
-
-# closure_stylesheet_library(
-#     name = "coffeerun_css",
-#     srcs = glob(["styles/*.gss"]),
-#     deps = ["@closure_library//:closure_library_css"],
-# )
-
-# closure_template_library(
-#     name = "coffeerun_soy",
-#     srcs = glob(["templates/*.soy"]),
-# )
 
 ####
 # The following dependencies were calculated from:
