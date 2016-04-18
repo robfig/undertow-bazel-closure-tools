@@ -30,3 +30,5 @@ exports.main = function(window) {
 
   formHandler.addInputHandler(Validation.isCompanyEmail);
 };
+
+goog.exportSymbol('app.main', exports.main);

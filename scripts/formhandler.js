@@ -63,6 +63,6 @@ exports = goog.defineClass({
     this.$formElement.on('input', '[name=strength]', function(event) {
       $reading.text(this.value);
     });
-  },
+  }
 
 });

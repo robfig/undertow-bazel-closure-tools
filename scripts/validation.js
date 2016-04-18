@@ -1,14 +1,7 @@
-(function (window) {
-    'use strict';
-    var App = window.App || {};
-    var $ = window.jQuery;
+goog.module('app.Validation');
 
-    var Validation = {
-      isCompanyEmail: function(email) {
-        return /yext\.com/.test(email);
-      }
-    }
-
-    App.Validation = Validation;
-    window.App = App;
-  })(window);
+exports.Validation = {
+  isCompanyEmail: function(email) {
+    return /yext\.com/.test(email);
+  }
+};

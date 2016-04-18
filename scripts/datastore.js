@@ -20,5 +20,5 @@ exports = goog.defineClass({
 
   remove: function(key) {
     delete this.data[key];
-  },
+  }
 });

@@ -5,7 +5,10 @@ java_binary(
         ":io_undertow_undertow_websockets_jsr",
         ":io_undertow_undertow_core",
         ":io_undertow_undertow_servlet",
-        ":coffeerun",
+    ],
+    resources = [
+        ":coffeerun_bin",
+        ":coffeerun_css_bin",
     ],
     main_class = "com.robfig.Server",
 )
@@ -24,13 +27,15 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_template_java_library
 closure_js_binary(
     name = "coffeerun_bin",
     main = "coffeerun",
+#    css = [":coffeerun_css_bin"],
+    pedantic = 1,
     deps = [":coffeerun_lib"],
 )
 
 closure_js_library(
     name = "coffeerun_lib",
     srcs = glob(["scripts/*.js"]),
-#    language = "ECMASCRIPT6_TYPED",
+    language = "ECMASCRIPT6",
     deps = [
         ":coffeerun_soy",
     ]
