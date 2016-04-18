@@ -7,7 +7,11 @@ import com.google.template.soy.tofu.*;
 
 import io.undertow.*;
 import io.undertow.server.*;
+import io.undertow.server.handlers.resource.*;
 import io.undertow.util.*;
+
+import static io.undertow.Handlers.path;
+import static io.undertow.Handlers.resource;
 
 /**
  * Simple server to demonstrate closure tool stack.
@@ -21,8 +25,11 @@ public class Server {
             .build()
             .compileToTofu();
         Undertow server = Undertow.builder()
-                .addHttpListener(8080, "localhost")
-                .setHandler(new HttpHandler() {
+            .addHttpListener(8080, "localhost")
+            .setHandler(
+                path()
+                .addPrefixPath("/public/", resource(new ClassPathResourceManager(Server.class.getClassLoader())))
+                .addPrefixPath("/", new HttpHandler() {
                     @Override
                     public void handleRequest(final HttpServerExchange exchange) throws Exception {
                         String html = tofu.newRenderer("coffeerun.main")
@@ -30,7 +37,7 @@ public class Server {
                         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/html");
                         exchange.getResponseSender().send(html);
                     }
-                }).build();
+                })).build();
         server.start();
     }    
 }

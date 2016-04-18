@@ -1,19 +1,18 @@
 goog.module("app");
 
-exports.main = function(window) {
+var Truck = goog.require('app.Truck');
+var DataStore = goog.require('app.DataStore');
+var FormHandler = goog.require('app.FormHandler');
+var Achievements = goog.require('app.Achievements');
+var CheckList = goog.require('app.CheckList');
+var Validation = goog.require('app.Validation');
+
+function main() {
   var FORM_SELECTOR = '[data-coffee-order="form"]';
   var ACHIEVEMENTS_SELECTOR = '[data-coffee-order="form"]';
   var MODAL_SELECTOR = '#myModal';
   var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
   var SERVER_URL = 'http://coffeerun201509.herokuapp.com/api/coffeeorders';
-
-  var App = window.App;
-  var Truck = App.Truck;
-  var DataStore = App.DataStore;
-  var FormHandler = App.FormHandler;
-  var Achievements = App.Achievements;
-  var CheckList = App.CheckList;
-  var Validation = App.Validation;
 
   var myTruck = new Truck('ncc-1701', new DataStore());
   window.myTruck = myTruck;
@@ -31,4 +30,5 @@ exports.main = function(window) {
   formHandler.addInputHandler(Validation.isCompanyEmail);
 };
 
-goog.exportSymbol('app.main', exports.main);
+goog.exportSymbol('app.main', main);
+exports.main = main;

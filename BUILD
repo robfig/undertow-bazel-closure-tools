@@ -38,7 +38,7 @@ closure_js_binary(
 closure_js_library(
     name = "coffeerun_lib",
     srcs = glob(["scripts/*.js"]),
-    language = "ECMASCRIPT6",
+#    language = "ECMASCRIPT6",
     deps = [
         ":coffeerun_soy",
     ]
