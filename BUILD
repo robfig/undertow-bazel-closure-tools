@@ -31,17 +31,28 @@ closure_js_binary(
     name = "coffeerun_bin",
     main = "coffeerun",
 #    css = [":coffeerun_css_bin"],
-    pedantic = 1,
+    pedantic = True,
+     formatting="PRETTY_PRINT",
+     compilation_level="ADVANCED",
+    debug=True,
     deps = [":coffeerun_lib"],
 )
 
 closure_js_library(
     name = "coffeerun_lib",
     srcs = glob(["scripts/*.js"]),
-#    language = "ECMASCRIPT6",
+    language = "ECMASCRIPT5",
+#    depmode = "CLOSURE",
     deps = [
+        "@io_bazel_rules_closure//closure/library",
         ":coffeerun_soy",
+        ":jquery",
     ]
+)
+
+closure_js_library(
+    name = "jquery",
+    externs = ["externs/jquery-1.9.js"],
 )
 
 closure_css_binary(
