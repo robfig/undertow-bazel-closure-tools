@@ -1,6 +1,6 @@
 goog.module('app.Validation');
 
-exports.Validation = {
+exports = {
   /**
    * @param {string} email to test
    * @return {boolean} if it's a company email
