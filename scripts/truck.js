@@ -1,6 +1,6 @@
 goog.module('app.Truck');
 
-exports = goog.defineClass({
+exports = goog.defineClass(null, {
   constructor: function(truckId, db) {
     this.truckId = truckId;
     this.db = db;

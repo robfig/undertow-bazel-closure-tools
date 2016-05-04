@@ -7,12 +7,22 @@ var Achievements = goog.require('app.Achievements');
 var CheckList = goog.require('app.CheckList');
 var Validation = goog.require('app.Validation');
 
+var soy = goog.require('soy');
+
+var tmpl = goog.require('coffeerun.js');
+
+/** main */
 function main() {
   var FORM_SELECTOR = '[data-coffee-order="form"]';
   var ACHIEVEMENTS_SELECTOR = '[data-coffee-order="form"]';
   var MODAL_SELECTOR = '#myModal';
   var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
   var SERVER_URL = 'http://coffeerun201509.herokuapp.com/api/coffeeorders';
+
+  soy.renderElement(
+    document.getElementById("target"),
+    tmpl.test,
+    {foo: "foo", bar: "bar"});
 
   var myTruck = new Truck('ncc-1701', new DataStore());
   window.myTruck = myTruck;
@@ -28,7 +38,6 @@ function main() {
   formHandler.addSubmitHandler(achievements.checkEligibility.bind(achievements));
 
   formHandler.addInputHandler(Validation.isCompanyEmail);
-};
+}
 
 goog.exportSymbol('app.main', main);
-exports.main = main;

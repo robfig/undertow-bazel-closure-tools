@@ -1,5 +1,8 @@
 goog.module('app.CheckList');
 
+/**
+ * @constructor
+ */
 function Row(coffeeOrder) {
   var $div = $('<div/>', {
     'data-coffee-order': 'checkbox',
@@ -25,7 +28,7 @@ function Row(coffeeOrder) {
   this.$element = $div;
 };
 
-exports = goog.defineClass({
+exports = goog.defineClass(null, {
   constructor: function(selector) {
     if (!selector) {
       throw new Error('No selector provided');

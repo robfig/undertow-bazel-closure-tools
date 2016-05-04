@@ -29,9 +29,9 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_template_java_library
 
 closure_js_binary(
     name = "coffeerun_bin",
-    main = "coffeerun",
+    main = "app",
 #    css = [":coffeerun_css_bin"],
-    pedantic = True,
+#    pedantic = True,
      formatting="PRETTY_PRINT",
      compilation_level="ADVANCED",
     debug=True,
@@ -67,10 +67,7 @@ closure_css_library(
 
 closure_template_js_library(
     name = "coffeerun_soy",
-    srcs = ["templates/index.soy"],
-     deps = [
-        "@io_bazel_rules_closure//closure/library",
-    ],
+    srcs = glob(["templates/js.soy"]),
 )
 
 closure_template_java_library(

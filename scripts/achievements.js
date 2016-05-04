@@ -1,6 +1,6 @@
 goog.module('app.Achievements');
 
-exports = goog.defineClass({
+exports = goog.defineClass(null, {
   constructor: function(modalSelector) {
     this.winners = {};
     this.$modal = $(modalSelector);

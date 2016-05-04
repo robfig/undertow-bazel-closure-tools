@@ -1,5 +1,6 @@
 goog.module('app.FormHandler');
 
+/** formData */
 var formData = function(form) {
   return {
     coffee: form.elements.coffee.value,
@@ -10,7 +11,7 @@ var formData = function(form) {
   };
 };
 
-exports = goog.defineClass({
+exports = goog.defineClass(null, {
   constructor: function(selector) {
     if (!selector) {
       throw new Error('No selector provided');

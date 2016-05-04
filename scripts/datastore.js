@@ -1,6 +1,6 @@
 goog.module('app.DataStore');
 
-exports = goog.defineClass({
+exports = goog.defineClass(null, {
   constructor: function() {
     console.log('running');
     this.data = {};

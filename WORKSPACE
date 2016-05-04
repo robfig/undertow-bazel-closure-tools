@@ -1,7 +1,8 @@
 git_repository(
     name = "io_bazel_rules_closure",
     remote = "https://github.com/bazelbuild/rules_closure.git",
-    tag = "0.0.1",
+    commit = "cbcc88d384883cead872a389caf38974321487c5",
+#     tag = "0.0.1",
 )
 
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
