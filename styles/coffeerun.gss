@@ -1,3 +1,6 @@
+.my-renamed-class {
+  color: white;
+}
 form :focus:required:invalid {
   border-color: #a94442;
 }

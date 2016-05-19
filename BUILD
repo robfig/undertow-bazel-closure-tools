@@ -29,12 +29,11 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_template_java_library
 
 closure_js_binary(
     name = "coffeerun_bin",
-    main = "app",
-#    css = [":coffeerun_css_bin"],
-#    pedantic = True,
-     formatting="PRETTY_PRINT",
-     compilation_level="ADVANCED",
-    debug=True,
+    entry_points = ["goog:app"],
+    css = ":coffeerun_css_bin",
+    formatting="PRETTY_PRINT",
+    compilation_level="ADVANCED",
+    debug=False,
     deps = [":coffeerun_lib"],
 )
 
@@ -42,7 +41,6 @@ closure_js_library(
     name = "coffeerun_lib",
     srcs = glob(["scripts/*.js"]),
     language = "ECMASCRIPT5",
-#    depmode = "CLOSURE",
     deps = [
         "@io_bazel_rules_closure//closure/library",
         ":coffeerun_soy",
@@ -58,6 +56,7 @@ closure_js_library(
 closure_css_binary(
     name = "coffeerun_css_bin",
     deps = [":coffeerun_css"],
+    renaming = 1,
 )
 
 closure_css_library(

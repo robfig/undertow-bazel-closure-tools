@@ -12,13 +12,14 @@ var soy = goog.require('soy');
 var tmpl = goog.require('coffeerun.js');
 
 /** main */
-function main() {
+var main = function() {
   var FORM_SELECTOR = '[data-coffee-order="form"]';
   var ACHIEVEMENTS_SELECTOR = '[data-coffee-order="form"]';
   var MODAL_SELECTOR = '#myModal';
   var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
   var SERVER_URL = 'http://coffeerun201509.herokuapp.com/api/coffeeorders';
 
+  console.log('css class: ' + goog.getCssName('my-renamed-class'));
   soy.renderElement(
     document.getElementById("target"),
     tmpl.test,
@@ -38,6 +39,6 @@ function main() {
   formHandler.addSubmitHandler(achievements.checkEligibility.bind(achievements));
 
   formHandler.addInputHandler(Validation.isCompanyEmail);
-}
+};
 
 goog.exportSymbol('app.main', main);
