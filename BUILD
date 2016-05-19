@@ -73,9 +73,6 @@ closure_template_java_library(
     name = "coffeerun_soy_java",
     srcs = ["templates/index.soy"], 
     java_package = "com.robfig",
-    deps = [
-        ":com_google_guava_guava",
-    ],
 )
 
 # The following dependencies were calculated from:
