@@ -3,11 +3,11 @@ goog.module('app.FormHandler');
 /** formData */
 var formData = function(form) {
   return {
-    coffee: form.elements.coffee.value,
-    email: form.elements.emailAddress.value,
-    size: form.elements.size.value,
-    flavor: form.elements.flavor.value,
-    strength: form.elements.strength.value
+    coffee: form.elements['coffee'].value,
+    email: form.elements['emailAddress'].value,
+    size: form.elements['size'].value,
+    flavor: form.elements['flavor'].value,
+    strength: form.elements['strength'].value
   };
 };
 
