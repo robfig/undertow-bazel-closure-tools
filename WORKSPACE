@@ -9,16 +9,7 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
 closure_repositories()
 
 # The following dependencies were calculated from:
-# com.google.guava:guava:19.0
-
-maven_jar(
-    name = "com_google_guava_guava",
-    artifact = "com.google.guava:guava:19.0",
-)
-
-# The following dependencies were calculated from:
 # com.google.template:soy:2016-01-12
-
 
 # com.google.template:soy:jar:2016-01-12
 maven_jar(

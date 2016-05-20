@@ -2,7 +2,7 @@ java_binary(
     name = "server",
     srcs = glob(["src/**/*.java"]),
     deps = [
-        ":com_google_guava_guava",
+        "@guava//jar",
         ":com_google_template_soy",
         ":io_undertow_undertow_websockets_jsr",
         ":io_undertow_undertow_core",
@@ -76,17 +76,6 @@ closure_template_java_library(
 )
 
 # The following dependencies were calculated from:
-# com.google.guava:guava:19.0
-
-java_library(
-    name = "com_google_guava_guava",
-    visibility = ["//visibility:public"],
-    exports = [
-        "@com_google_guava_guava//jar",
-    ],
-)
-
-# The following dependencies were calculated from:
 # com.google.template:soy:2016-01-12
 
 java_library(
@@ -132,7 +121,7 @@ java_library(
         "@args4j_args4j//jar",
         "@asm_asm//jar",
         "@com_google_code_findbugs_jsr305//jar",
-        "@com_google_guava_guava//jar",
+        "@guava//jar",
         "@com_google_inject_extensions_guice_assistedinject//jar",
         "@com_google_inject_extensions_guice_multibindings//jar",
         "@com_google_inject_guice//jar",
