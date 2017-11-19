@@ -2,7 +2,7 @@ java_binary(
     name = "server",
     srcs = glob(["src/**/*.java"]),
     deps = [
-        "@guava//jar",
+        "@com_google_guava//jar",
         ":com_google_template_soy",
         ":io_undertow_undertow_websockets_jsr",
         ":io_undertow_undertow_core",
@@ -16,7 +16,7 @@ java_binary(
     main_class = "com.robfig.Server",
 )
 
-##### 
+#####
 # From https://github.com/bazelbuild/rules_closure/
 #
 
@@ -24,8 +24,8 @@ load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_binary")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_library")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_css_binary")
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_css_library")
-load("@io_bazel_rules_closure//closure:defs.bzl", "closure_template_js_library")
-load("@io_bazel_rules_closure//closure:defs.bzl", "closure_template_java_library")
+load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_template_library")
+load("@io_bazel_rules_closure//closure:defs.bzl", "closure_java_template_library")
 
 closure_js_binary(
     name = "coffeerun_bin",
@@ -64,14 +64,14 @@ closure_css_library(
     srcs = ["styles/coffeerun.gss"],
 )
 
-closure_template_js_library(
+closure_js_template_library(
     name = "coffeerun_soy",
     srcs = glob(["templates/js.soy"]),
 )
 
-closure_template_java_library(
+closure_java_template_library(
     name = "coffeerun_soy_java",
-    srcs = ["templates/index.soy"], 
+    srcs = ["templates/index.soy"],
     java_package = "com.robfig",
 )
 
@@ -121,7 +121,7 @@ java_library(
         "@args4j_args4j//jar",
         "@asm_asm//jar",
         "@com_google_code_findbugs_jsr305//jar",
-        "@guava//jar",
+        "@com_google_guava//jar",
         "@com_google_inject_extensions_guice_assistedinject//jar",
         "@com_google_inject_extensions_guice_multibindings//jar",
         "@com_google_inject_guice//jar",

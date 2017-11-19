@@ -20,7 +20,7 @@ import static io.undertow.Handlers.resource;
  */
 public class Server {
     public static void main(final String[] args) {
-        SoyTofu tofu = new SoyFileSet.Builder()
+        SoyTofu tofu = SoyFileSet.builder()
             .add(Resources.getResource("templates/index.soy"))
             .build()
             .compileToTofu();
@@ -39,6 +39,5 @@ public class Server {
                     }
                 })).build();
         server.start();
-    }    
+    }
 }
-

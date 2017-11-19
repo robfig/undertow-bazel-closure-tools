@@ -26,7 +26,7 @@ function Row(coffeeOrder) {
   $div.append($label);
 
   this.$element = $div;
-};
+}
 
 exports = goog.defineClass(null, {
   constructor: function(selector) {

@@ -1,6 +1,10 @@
 goog.module('app.FormHandler');
 
-/** formData */
+/**
+ * formData
+ * @param {object} form
+ * @return {object}
+ */
 var formData = function(form) {
   return {
     coffee: form.elements['coffee'].value,

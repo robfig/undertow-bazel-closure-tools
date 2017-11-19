@@ -1,10 +1,10 @@
 goog.module("app");
 
-var Truck = goog.require('app.Truck');
-var DataStore = goog.require('app.DataStore');
-var FormHandler = goog.require('app.FormHandler');
 var Achievements = goog.require('app.Achievements');
 var CheckList = goog.require('app.CheckList');
+var DataStore = goog.require('app.DataStore');
+var FormHandler = goog.require('app.FormHandler');
+var Truck = goog.require('app.Truck');
 var Validation = goog.require('app.Validation');
 
 var soy = goog.require('soy');
